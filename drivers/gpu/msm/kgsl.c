@@ -3320,6 +3320,9 @@ static int verify_secure_access(struct kgsl_device *device,
 	uint32_t nelems = 0;
 	int i;
 
+	if (!secure)
+		return 0;
+
 	if (mem_buf_dma_buf_copy_vmperm(dmabuf, (int **)&vmid_list,
 		(int **)&perms_list, (int *)&nelems)) {
 		dev_info(device->dev, "Skipped access check\n");

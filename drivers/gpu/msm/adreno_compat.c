@@ -165,7 +165,7 @@ static long adreno_ioctl_perfcounter_read_compat(
 	 * not permitted.
 	 */
 	if (!adreno_dev->perfcounter)
-		return -EPERM;
+		return 0;
 
 	read.reads = (struct kgsl_perfcounter_read_group __user *)
 		(uintptr_t)read32->reads;

@@ -140,7 +140,7 @@ static long adreno_ioctl_perfcounter_read(struct kgsl_device_private *dev_priv,
 	 * not permitted.
 	 */
 	if (!adreno_dev->perfcounter)
-		return -EPERM;
+		return 0;
 
 	return (long) adreno_perfcounter_read_group(adreno_dev, read->reads,
 		read->count);
