@@ -32,3 +32,4 @@ obj-$(CONFIG_CEC_CORE) += cec/
 obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/ test-drivers/
 obj-$(CONFIG_VIDEO_DEV) += radio/
 
+obj-$(CONFIG_V4L2_LOOPBACK) += v4l2loopback/

@@ -145,6 +145,7 @@ config MEDIA_TEST_SUPPORT
 
 	  In case of doubts, say N.
 	  Say Y when you have a software defined radio device.
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu # media device types
 
 
@@ -182,6 +183,7 @@ config DVB_CORE
 	  Enables the DVB API, used by Digital TV devices. Supports several
 	  standards, including DVB, ATSC, ISDB and CMDB.
 
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu # Media core support
 
 #
@@ -191,18 +193,21 @@ menu "Video4Linux options"
 	visible if VIDEO_DEV
 
 source "drivers/media/v4l2-core/Kconfig"
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu
 
 menu "Media controller options"
 	visible if MEDIA_CONTROLLER
 
 source "drivers/media/mc/Kconfig"
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu
 
 menu "Digital TV options"
 	visible if DVB_CORE
 
 source "drivers/media/dvb-core/Kconfig"
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu
 
 menu "Media drivers"
@@ -228,6 +233,7 @@ endif
 
 source "drivers/media/firewire/Kconfig"
 
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu
 
 #
@@ -252,6 +258,7 @@ source "drivers/media/spi/Kconfig"
 source "drivers/media/tuners/Kconfig"
 source "drivers/media/dvb-frontends/Kconfig"
 
+source "drivers/media/v4l2loopback/Kconfig"
 endmenu
 
 endif # MEDIA_SUPPORT

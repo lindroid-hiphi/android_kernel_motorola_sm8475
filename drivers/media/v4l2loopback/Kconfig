@@ -1,0 +1,6 @@
+config V4L2_LOOPBACK
+	tristate "V4L2 loopback virtual video device"
+	depends on VIDEO_V4L2
+	help
+	  Say M or Y here to enable virtual V4L2 video capture devices
+	  for Lindroid and Waydroid camera passthrough.
